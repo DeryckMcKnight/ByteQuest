@@ -1,0 +1,34 @@
+{
+  "name": "bytequest",
+  "version": "1.0.0",
+  "description": "Aplicativo educacional gamificado para ensinar programação",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd codelingo-app && pnpm run dev",
+    "build": "cd codelingo-app && pnpm run build",
+    "preview": "cd codelingo-app && pnpm run preview",
+    "install-deps": "cd codelingo-app && pnpm install",
+    "deploy": "./deploy-github-pages.sh"
+  },
+  "keywords": [
+    "education",
+    "programming",
+    "gamification",
+    "react",
+    "pwa",
+    "duolingo",
+    "learning"
+  ],
+  "author": "ByteQuest Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/[seu-usuario]/ByteQuest.git"
+  },
+  "homepage": "https://[seu-usuario].github.io/ByteQuest",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
+
