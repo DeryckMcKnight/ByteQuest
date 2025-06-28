@@ -51,7 +51,7 @@ git push origin main
 
 echo "✅ Deploy concluído!"
 echo "🌐 Sua aplicação estará disponível em alguns minutos em:"
-echo "   https://[seu-usuario].github.io/ByteQuest"
+echo "   https://deryckmcknight.github.io/ByteQuest"
 echo ""
 echo "📋 Próximos passos:"
 echo "1. Vá para as configurações do seu repositório no GitHub"

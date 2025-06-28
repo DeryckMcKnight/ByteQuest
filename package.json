@@ -23,9 +23,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/[seu-usuario]/ByteQuest.git"
+    "url": "https://github.com/DeryckMcKnight/ByteQuest.git"
   },
-  "homepage": "https://[seu-usuario].github.io/ByteQuest",
+  "homepage": "https://deryckmcknight.github.io/ByteQuest",
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=8.0.0"

@@ -26,8 +26,8 @@ git init
 git add .
 git commit -m "🎉 Initial commit: ByteQuest - Aplicativo educacional gamificado"
 
-# Conectar ao repositório remoto (substitua [seu-usuario] pelo seu username)
-git remote add origin https://github.com/[seu-usuario]/ByteQuest.git
+# Conectar ao repositório remoto
+git remote add origin https://github.com/DeryckMcKnight/ByteQuest.git
 git branch -M main
 git push -u origin main
 ```
@@ -53,8 +53,8 @@ git push -u origin main
 
 Após o setup, sua aplicação estará disponível em:
 
-- **GitHub Repository**: `https://github.com/[seu-usuario]/ByteQuest`
-- **GitHub Pages**: `https://[seu-usuario].github.io/ByteQuest`
+- **GitHub Repository**: `https://github.com/DeryckMcKnight/ByteQuest`
+- **GitHub Pages**: `https://deryckmcknight.github.io/ByteQuest`
 - **Demo Atual**: `https://vlbsskch.manus.space`
 
 ## 🔄 Workflow de Desenvolvimento
@@ -165,5 +165,5 @@ Agora você tem:
 - ✅ Aplicação rodando no GitHub Pages
 - ✅ Workflow de desenvolvimento configurado
 
-**Sua aplicação estará disponível em**: `https://[seu-usuario].github.io/ByteQuest`
+**Sua aplicação estará disponível em**: `https://deryckmcknight.github.io/ByteQuest`
 

@@ -81,7 +81,7 @@ O aplicativo está disponível online em: **https://vlbsskch.manus.space**
 ### GitHub Pages
 Para hospedar no GitHub Pages, siga o guia em [GITHUB_SETUP.md](GITHUB_SETUP.md)
 
-Após configurar, estará disponível em: `https://[seu-usuario].github.io/ByteQuest`
+Após configurar, estará disponível em: `https://deryckmcknight.github.io/ByteQuest`
 
 ### Como usar:
 1. Acesse o link acima
