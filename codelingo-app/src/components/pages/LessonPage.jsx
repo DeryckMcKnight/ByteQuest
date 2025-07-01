@@ -4,12 +4,12 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import { Badge } from '@/components/ui/badge'
-import { 
-  CheckCircle, 
-  X, 
-  ArrowRight, 
-  ArrowLeft, 
-  Heart, 
+import {
+  CheckCircle,
+  X,
+  ArrowRight,
+  ArrowLeft,
+  Heart,
   Star,
   Code,
   Play
@@ -17,6 +17,7 @@ import {
 import DragDropExercise from '../game/DragDropExercise'
 import FillBlankExercise from '../game/FillBlankExercise'
 import { AnimatedFeedback, FloatingXP } from '../game/Animations'
+import { lessonsDatabase } from '../../data/lessons'
 
 const LessonPage = ({ user }) => {
   const { lessonId } = useParams()
@@ -33,66 +34,20 @@ const LessonPage = ({ user }) => {
   const [animationMessage, setAnimationMessage] = useState('')
   const [showFloatingXP, setShowFloatingXP] = useState(false)
 
-  // Dados da lição (simulado)
-  const lessonData = {
-    'python-basics-1': {
-      title: 'Variáveis e Tipos em Python',
-      description: 'Aprenda sobre variáveis e tipos de dados básicos',
-      xpReward: 50,
-      questions: [
-        {
-          id: 1,
-          type: 'multiple-choice',
-          question: 'Qual é a forma correta de criar uma variável em Python?',
-          code: null,
-          options: [
-            'var nome = "João"',
-            'nome = "João"',
-            'string nome = "João"',
-            'let nome = "João"'
-          ],
-          correct: 1,
-          explanation: 'Em Python, você simplesmente atribui um valor a um nome de variável usando o operador =.'
-        },
-        {
-          id: 2,
-          type: 'fill-blank',
-          question: 'Complete o código para criar uma variável idade com valor 25:',
-          code: '_____ = 25',
-          options: ['idade', 'var idade', 'int idade', 'let idade'],
-          correct: 0,
-          explanation: 'Em Python, você não precisa declarar o tipo da variável explicitamente.'
-        },
-        {
-          id: 3,
-          type: 'code-error',
-          question: 'Identifique o erro no código abaixo:',
-          code: '2nome = "Python"\nprint(2nome)',
-          options: [
-            'Falta ponto e vírgula',
-            'Nome de variável não pode começar com número',
-            'Deveria usar var',
-            'Está correto'
-          ],
-          correct: 1,
-          explanation: 'Nomes de variáveis em Python não podem começar com números. Devem começar com letra ou underscore.'
-        },
-        {
-          id: 4,
-          type: 'drag-drop',
-          question: 'Arraste os blocos na ordem correta para criar e imprimir uma variável:',
-          code: null,
-          blocks: ['nome = "CodeLingo"', 'print(nome)'],
-          correct: [0, 1],
-          explanation: 'Primeiro criamos a variável, depois a imprimimos.'
-        }
-      ]
+  const lesson = lessonsDatabase[lessonId]
+
+  useEffect(() => {
+    if (!lesson) {
+      navigate("/") // Redireciona para a home se a lição não for encontrada
     }
+  }, [lesson, navigate])
+
+  if (!lesson) {
+    return null // Ou um componente de carregamento/erro
   }
 
-  const lesson = lessonData[lessonId] || lessonData['python-basics-1']
   const question = lesson.questions[currentQuestion]
-  const progress = ((currentQuestion + 1) / lesson.questions.length) * 100
+  const progress = lesson.questions.length > 0 ? ((currentQuestion + 1) / lesson.questions.length) * 100 : 0
 
   const handleAnswerSelect = (answerIndex) => {
     setSelectedAnswer(answerIndex)
